@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Medical Tracker — Symptoms & Nearby Care</title>
+
+<link rel="stylesheet" href="/static/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div>
+      <h1 class="title">🩺 Medical Tracker — Symptoms & Nearby Care</h1>
+      <div class="muted">Informational only — not a substitute for professional medical advice.</div>
+    </div>
+    <div class="header-right">
+      <div id="clock">--:--:--</div>
+      <button id="themeToggle" class="theme-btn" title="Toggle theme">🌙</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="grid">
+      <!-- LEFT -->
+      <div>
+        <div class="section-title">1. Enter symptoms</div>
+        <textarea id="symptomText" placeholder="e.g. fever, cough, sore throat"></textarea>
+
+        <div class="chips-search">
+          <input id="chipFilter" class="sym-search-input" placeholder="Search / filter symptoms" />
+          <button id="clearFilter" class="add-sym-btn" title="Clear filter">Clear</button>
+          <div style="flex:1"></div>
+          <button id="addSymBtn" class="add-sym-btn" title="Add typed symptom to chips">➕ Add symptom</button>
+        </div>
+
+        <div class="chips-row" id="quickSymptoms"></div>
+
+        <div class="controls-row" style="margin-top:8px">
+          <button class="btn" id="predictBtn">🔍 Predict</button>
+          <button class="btn ghost" id="resetBtn">♻ Reset</button>
+          <button class="btn ghost" id="findDoctorsBtn" style="margin-left:auto">📍 Find Doctors</button>
+        </div>
+
+        <div id="error" class="error-banner" style="display:none"></div>
+
+        <div style="margin-top:14px">
+          <div class="section-title">2. Predictions</div>
+          <div id="predList" class="pred-list small">No predictions yet.</div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div class="section-title">3. Past checks</div>
+          <div id="historyList" class="history-list small"><div class="small muted">No saved history.</div></div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <aside>
+        <div class="section-title">Nearby Doctors & Clinics</div>
+        <div class="map-wrap"><div id="map"></div></div>
+        <div id="placesList" class="list"></div>
+
+        <div style="margin-top:12px">
+          <div class="section-title">Medications & Next Steps</div>
+          <div id="medications" class="small" style="margin-top:8px">Run a prediction to see suggested supportive medications.</div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="footer">⚠ This demo is educational only. If symptoms are severe, seek emergency care immediately.</div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="/static/script.js"></script>
+</body>
+</html>
