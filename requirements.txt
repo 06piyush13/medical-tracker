@@ -1,0 +1,15 @@
+# === Core Web Framework ===
+Flask==3.0.3
+Flask-Cors==4.0.0
+
+# === MySQL Database Driver ===
+mysql-connector-python==9.0.0
+
+# === Environment Variables Loader (for .env) ===
+python-dotenv==1.0.1
+
+# === HTTP Requests (used for APIs if needed) ===
+requests==2.32.3
+
+# === Optional Utilities (safe logging, etc.) ===
+colorama==0.4.6
